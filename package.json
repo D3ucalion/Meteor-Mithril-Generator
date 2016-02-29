@@ -1,0 +1,24 @@
+{
+  "name": "generator-meteor-mithril",
+  "version": "0.0.10",
+  "description": "A simple generator for using Mithril with Meteor instead of Blaze. It also creates a file with basic mithril routing setup.",
+  "homepage": "none",
+  "author": {
+    "name": "Cody",
+    "email": "moarguru13@gmail.com",
+    "url": "none"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "readme": "This generator replaces Blaze with Mithril, sets up basic Mithril routing and creates a shared functions helper file. You will need to run | npm i generator-meteor-mithril | This will add the template for the generator. Then make sure you have yeoman setup. | npm install yeoman-generator | npm install -g yo | You may then cd to your workspace directory and run the generator with | yo meteor-mithril | This will automatically create the .meteor, lib, server and client directories. Mithril will automatically be added to lib. You should then be able to run meteor from your working directory and see the basic single page application with Mithril-Meteor.\n",
+  "readmeFilename":"README.md",
+  "keywords": [
+    "Meteor-Mithril",
+    "Meteor",
+    "Mithril",
+    "Generator"
+  ],
+  "dependencies": ["Meteor", "Yeoman"]
+}
