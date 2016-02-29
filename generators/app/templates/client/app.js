@@ -36,7 +36,7 @@ var Menu = {
 	m('.select', [
 	m('header'),
     
-    m('span', {class: "pageRibbon", role: "navigation"}, [
+    m('span', {class: "pageRibbon", role: "navigation", config: function(e){console.log(e); Meteor.sharedFunctions.fade('in', 1500, e, true)}}, [
 		btn("Home",  "/"),
 		btn("About",  "/about"),
 		btn("Contact",  "/contact")

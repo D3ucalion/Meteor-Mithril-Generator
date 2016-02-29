@@ -1,6 +1,6 @@
 {
   "name": "generator-meteor-mithril",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A simple generator for using Mithril with Meteor instead of Blaze. It also creates a file with basic mithril routing setup.",
   "homepage": "none",
   "author": {
