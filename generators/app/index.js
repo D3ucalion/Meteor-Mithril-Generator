@@ -54,6 +54,10 @@ module.exports = yeoman.Base.extend({
         this.templatePath('client/about.js'),
         this.destinationPath('client/about.js')
       );
+      this.fs.copy(
+        this.templatePath('client/contact.js'),
+        this.destinationPath('client/contact.js')
+      );
     },
     
     serverfiles: function() {
