@@ -6,4 +6,11 @@ This will add the template for the generator.
 Then make sure you have yeoman setup.
 
 npm install yeoman-generator
+
 npm install -g yo
+
+npm i generator-meteor-mithril
+
+yo meteor-mithril
+
+https://www.npmjs.com/package/generator-meteor-mithril
