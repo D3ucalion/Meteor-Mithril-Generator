@@ -4,6 +4,6 @@ contact = {
         
     },
     view: function(ctrl){
-        return m('.content', 'CONTACT GOES HERE!', [m('hr')])
+        return m('.jumbotron', 'CONTACT GOES HERE!')
     }
 }

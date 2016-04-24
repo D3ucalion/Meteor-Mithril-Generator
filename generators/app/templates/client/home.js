@@ -4,6 +4,6 @@ home = {
         
     },
     view: function(ctrl){
-        return m('.content', 'LANDING GOES HERE!', [m('hr')])
+        return m('.jumbotron', [m('h2', 'LANDING GOES HERE!')])
     }
 }

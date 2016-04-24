@@ -31,24 +31,37 @@ var Menu = {
 		
     },
     view: function(ctrl){
-        
+        //let pageRibbon = document.querySelector('.pageRibbon')
+        //Meteor.sharedFunctions.fade('in', 1000, pageRibbon, true)
         return [
-	m('.select', [
-	m('header'),
-    
-    m('span', {class: "pageRibbon", role: "navigation", config: function(e){console.log(e); Meteor.sharedFunctions.fade('in', 1000, e, true)}}, [
-		btn("Home",  "/"),
-		btn("About",  "/about"),
-		btn("Contact",  "/contact")
+	m('div.navbar.navbar-default.navbar-static-top', [
+    m('.container',[
+    m('.navbar-collapse.collapse#navbar-main', [    
+    m('ul.nav.navbar-nav', {role: "navigation"}, [
+        m('a.navbar-brand', 'Meteor-Mithril'),
+		nav("Home",  "/"),
+		nav("About",  "/about"),
+		nav("Contact",  "/contact")
 		
-		])])]
+	])])
+	])]), 
+
+	]
 
 	function btn(name, route){
 		var isCurrent = (m.route() === route);
 		var click = function(){ m.route(route); };
-		return m("button"+(isCurrent ? ".navBtn.Active" : ".navBtn"), {onclick: click}, name);
+		return m("button"+
+		(isCurrent ? ".btn.btn-default.navbar-btn.active" : ".btn.btn-default.navbar-btn"), 
+		{onclick: click, type: 'button'}, name);
 	}
-
+		function nav(name, route){
+		var isCurrent = (m.route() === route);
+		var click = function(){ m.route(route); };
+		return m("li"+
+		(isCurrent ? ".active" : ""), 
+		{onclick: click},[ m('a.Pointer', name)]);
+	}
     }
     
     
@@ -56,7 +69,7 @@ var Menu = {
 
 function Page(content, placePlugin){
 	    this.view = function(){
-		return [ Menu.view(), m(".page", content ) ];
+		return [ Menu.view(), m(".container", content ) ];
 	}
 
 }
