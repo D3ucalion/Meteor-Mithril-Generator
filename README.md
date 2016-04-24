@@ -1,5 +1,7 @@
 This is a generator for using Mithril with Meteor.    
-It replaces Blaze with Mithril, sets up basic Mithril routing and creates a shared functions helper file. 
+It replaces Blaze with Mithril, sets up basic Mithril routing and creates a shared functions helper file. This also includes bootstrap for initial styling.
+
+Recently updated for Meteor 1.3.2
 
 You will need to run: npm i generator-meteor-mithril
 This will add the template for the generator.
