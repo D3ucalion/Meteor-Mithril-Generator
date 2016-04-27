@@ -31,8 +31,9 @@ var Menu = {
 		
     },
     view: function(ctrl){
-        //let pageRibbon = document.querySelector('.pageRibbon')
-        //Meteor.sharedFunctions.fade('in', 1000, pageRibbon, true)
+        setTimeout(function(){
+            m.redraw(true);
+        }, 0)
         return [
 	m('div.navbar.navbar-default.navbar-static-top', [
     m('.container',[
@@ -41,12 +42,12 @@ var Menu = {
         m('a.navbar-brand', 'Meteor-Mithril'),
 		nav("Home",  "/"),
 		nav("About",  "/about"),
-		nav("Contact",  "/contact")
-		
-	])])
-	])]), 
-
-	]
+		nav("Contact",  "/contact"),
+		Meteor.user() ? nav("Results",  "/results") : ''
+	]),
+	[m("ul.nav.navbar-nav.navbar-right[id='login-buttons']", [
+			Meteor.user() ? logout('Logout', '/') : nav("Sign in",  "/auth")
+	])]])])])]
 
 	function btn(name, route){
 		var isCurrent = (m.route() === route);
@@ -55,12 +56,16 @@ var Menu = {
 		(isCurrent ? ".btn.btn-default.navbar-btn.active" : ".btn.btn-default.navbar-btn"), 
 		{onclick: click, type: 'button'}, name);
 	}
-		function nav(name, route){
+	function nav(name, route){
 		var isCurrent = (m.route() === route);
 		var click = function(){ m.route(route); };
 		return m("li"+
 		(isCurrent ? ".active" : ""), 
 		{onclick: click},[ m('a.Pointer', name)]);
+	}
+	function logout(name, route){
+	    var x1 = function(){Meteor.logout(); window.location.reload()};
+	    return m('li', [m("a.Pointer", {onclick: x1}, name)]);
 	}
     }
     
@@ -81,12 +86,16 @@ App.controller = reactive(function() {
         Home = new Page(home);
         About = new Page(about);
         Contact = new Page(contact);
+        Auth = new Page(auth);
+        Results = new Page(results);
         m.route.mode = "pathname";
         
         m.route(document.body, "/", {
     	    "/": Home,
     	    "/about": About,
-    	    "/contact": Contact
+    	    "/contact": Contact,
+    	    "/auth": Auth,
+    	    "/results": Results
 });  
 
 })

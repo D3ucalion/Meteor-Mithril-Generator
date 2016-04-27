@@ -1,3 +1,8 @@
+/*******************************************************************
+shared functions which can be called from the server or client,
+for example the fade function could be called from any Mithril component via
+Meteor.sharedFunctions.fade('in', 100, this, true)
+********************************************************************/
 Meteor.sharedFunctions = {
     fade: function(type, ms, el, full){
     full == null || full == undefined ? full = true : full;

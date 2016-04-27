@@ -4,6 +4,6 @@ about = {
         
     },
     view: function(ctrl){
-        return m('.jumbotron', 'ABOUT US GOES HERE!')
+        return m('.jumbotron', 'About info')
     }
 }
