@@ -46,45 +46,46 @@ auth = {
 					          ]),
         					m("form[action='']", {onsubmit: ctrl.login}, [
         						m(".form-group", [
-				      			m("label[for='email']", [
-                      "Email Address ",
-                      m("span.required", "*")
-                    ]),
-    							  m("input.form-control[name='email'][placeholder='Email Address'][type='email'][id='username']")
-						      ]),
-      						m(".form-group", [
-    							m("label[for='password']", ["Password ",m("span.required", "*")]),
-    							m("input.form-control[name='password'][placeholder='Password'][type='password'][id='password']")
-						]),
-		  			ctrl.signUp == true ? [
-              m(".form-group", [
-  							m("label[for='password']", [
-                    "Password Confirm ",
-                    m("span.required", "*")
-                ]),
-  							m("input.form-control[name='password'][placeholder='Password'][type='password'][id='password']")
-	  					])
-            ] : '',
-						  m(".col-md-4", [
-    						m("button.btn.btn-primary.expand[type='submit']", 
-                  ctrl.signUp == true ? "Sign up" : "Sign in"),
-						  ]),
-							m(".col-md-4", [
-						  	m("a.Pointer", {onclick: function(){m.route('/forgot-password')}}, "Forgot Password?")
-						  ]),  
-							m(".col-md-6", [
-							  m("a.Pointer", {
-                    onclick: function(){
-                      ctrl.signUp == true ? ctrl.signUp = false : ctrl.signUp = true
-                    }
-                }, 
-							  ctrl.signUp == true ? "Already have an account?" : "Don't have an account?")
-						  ])
-					  ]),
-				  ])
-			  ])
-		  ])
-  	  ])
-    ])
-  ])}
+				      			  m("label[for='email']", [
+                        "Email Address ",
+                        m("span.required", "*")
+                      ]),
+      							  m("input.form-control[name='email'][placeholder='Email Address'][type='email'][id='username']")
+						        ]),
+        						m(".form-group", [
+        							m("label[for='password']", ["Password ",m("span.required", "*")]),
+        							m("input.form-control[name='password'][placeholder='Password'][type='password'][id='password']")
+    						    ]),
+        		  			ctrl.signUp == true ? [
+                      m(".form-group", [
+          							m("label[for='password']", [
+                          "Password Confirm ",
+                          m("span.required", "*")
+                        ]),
+          							m("input.form-control[name='password'][placeholder='Password'][type='password'][id='password']")
+      	  					  ])
+                    ] : '',
+      						  m(".col-md-4", [
+          						m("button.btn.btn-primary.expand[type='submit']", 
+                        ctrl.signUp == true ? "Sign up" : "Sign in"),
+      						  ]),
+      							m(".col-md-4", [
+      						  	m("a.Pointer", {onclick: function(){m.route('/forgot-password')}}, "Forgot Password?")
+			      			  ]),  
+      							m(".col-md-6", [
+      							  m("a.Pointer", {
+                        onclick: function(){
+                          ctrl.signUp == true ? ctrl.signUp = false : ctrl.signUp = true
+                        }
+                      }, 
+      							  ctrl.signUp == true ? "Already have an account?" : "Don't have an account?")
+						        ])
+					        ]),
+				        ])
+			        ])
+		        ])
+  	      ])
+        ])
+      ])
+    }
 }
