@@ -26,7 +26,7 @@ auth = {
 				    console.log('success!');
 				    m.redraw(true);
 				    m.route('/')
-				  });
+				  }});
 			  }
         console.log(Meteor.user());
       }  
