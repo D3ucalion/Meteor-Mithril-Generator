@@ -8,8 +8,8 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type: 'confirm',
       name: 'Shared',
-      message: 'A shared helpers file will be created in lib/',
-      default: true
+      message: 'Create a shared/common helper file?',
+      default: false
     }];
 
     this.prompt(prompts, function (props) {
@@ -30,10 +30,12 @@ module.exports = yeoman.Base.extend({
         this.templatePath('lib/mithril.min.js'),
         this.destinationPath('lib/mithril.min.js')
       );
-      this.fs.copy(
-        this.templatePath('lib/shared.js'),
-        this.destinationPath('lib/shared.js')
-      );
+      if(this.props.Shared){
+        this.fs.copy(
+          this.templatePath('lib/shared.js'),
+          this.destinationPath('lib/shared.js')
+        );
+      }
       this.fs.copy(
         this.templatePath('lib/collections/messages.js'),
         this.destinationPath('lib/collections/messages.js')
@@ -41,7 +43,7 @@ module.exports = yeoman.Base.extend({
     },
 
     clientfiles: function () {
-      
+
       this.fs.copy(
         this.templatePath('client/app.js'),
         this.destinationPath('client/app.js')
@@ -75,7 +77,7 @@ module.exports = yeoman.Base.extend({
         this.destinationPath('client/results.js')
       );
     },
-    
+
     serverfiles: function() {
       this.fs.copy(
         this.templatePath('server/server.js'),
@@ -88,7 +90,7 @@ module.exports = yeoman.Base.extend({
       this.fs.copy(
         this.templatePath('server/publications.js'),
         this.destinationPath('server/publications.js')
-      );      
+      );
     }
   },
 
